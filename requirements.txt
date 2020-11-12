@@ -32,7 +32,7 @@ psycopg2-binary==2.8.2
 py==1.8.1
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
-pymssql==2.1.4
+pymssql==2.1.5
 pyodbc==4.0.26
 pyparsing==2.4.7
 PyPika==0.35.15
