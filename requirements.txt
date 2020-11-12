@@ -1,0 +1,5 @@
+# API 
+flask==1.0.2
+
+# local xgboost model package
+-e 'project_x/MachineLearning/model_package'
