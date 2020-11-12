@@ -1,5 +1,6 @@
 # API 
 flask==1.0.2
-
+category-encoders==2.1.0
+xgboost==0.90
 # local xgboost model package
 -e 'project_x/MachineLearning/model_package'
