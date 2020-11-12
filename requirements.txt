@@ -4,4 +4,4 @@ category-encoders==2.1.0
 xgboost==0.90
 joblib==0.13.2
 # local xgboost model package
--e 'project_x/MachineLearning/model_package'
+#-e 'project_x/MachineLearning/model_package'   LEAVING THIS A BIT FOR CICD
