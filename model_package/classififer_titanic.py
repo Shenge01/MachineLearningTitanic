@@ -18,7 +18,7 @@ def classifier_titanic_model(request):
 	SibSp = int(request['SibSp'])
 	Parch = int(request['Parch'])
 	Ticket = int(request['Ticket'])
-	Fare = float(request['Fare'])
+	Fare = int(request['Fare'])
 	Cabin = str(request['Cabin'])
 	Embarked = str(request['Embarked'])
 
@@ -27,6 +27,9 @@ def classifier_titanic_model(request):
 
 	# Rename Columns 
 	input_data.columns = ['Pclass','Name', 'Sex', 'Age', 'SibSp', 'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked']
+
+	input_data[['Fare', 'Age']] = input_data[['Fare', 'Age']].astype(int)
+	print(input_data.info())
 
 	# Feature Engineering 
 	# Create Status
@@ -43,23 +46,18 @@ def classifier_titanic_model(request):
 	cols = ['Pclass', 'Embarked', 'Person', 'Status']
 
 	input_data.Pclass = input_data.Pclass.map({1 : 'first',2 : 'second', 3 : 'third'})
+	
 	# Encode categorical fetatures
-	print(input_data.info())
-	print(input_data.head())
-	print("----")
-	encoded = ohe_titanic.transform(input_data[cols])
-	data_1 = input_data.drop(labels=cols, axis=1)
-	input_data = pd.merge(data_1,encoded, how='inner', left_index=True, right_index=True)
-	print(encoded.info())
-	print(encoded.head())
+	encoded = ohe_titanic.transform(input_data)
 
-	actual_cols = ['Age', 'Fare', 'Family', 'Pclass_first', 'Pclass_second',
-					'Pclass_third', 'Embarked_C', 'Embarked_Q', 'Embarked_S',
-					'Person_Child', 'Person_female', 'Person_male', 'Status_Miss',
-					'Status_Mr', 'Status_Mrs', 'Status_Other']
+	#print(f"COLUMNS OF THIS ARE {encoded.columns}")
 
-	data_1[['Fare', 'Age']].astype(float)
+	encoded = encoded[['Pclass_third', 'Pclass_first', 'Pclass_second', 'Age', 'Fare',
+				'Embarked_S', 'Embarked_C', 'Embarked_Q', 'Person_male',
+				'Person_female', 'Person_Child', 'Family', 'Status_Mr', 'Status_Mrs',
+				'Status_Miss', 'Status_Other']]
+
 	# make a prediction
-	prediction = classifier_model_titanic.predict(input_data)	
+	prediction = classifier_model_titanic.predict(encoded)	
 
 	return int(prediction)

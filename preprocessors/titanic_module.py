@@ -16,7 +16,7 @@ def male_female_child(column):
         return sex
 
 def family(field1, field2):
-	return field1 + field2
+	return int(field1 + field2)
 
 def other_titles(data_object, column):
 	Others = ['Dona','Master', 'Dr', 'Rev',
