@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/python:3.8.0a2-stretch
+      - image: circleci/python:3.8.6-buster
 
     working_directory: ~/repo
 
