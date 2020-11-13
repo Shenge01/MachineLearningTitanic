@@ -14,7 +14,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            pip3 install -r requirements.txt
+            pip3 install --upgrade --force-reinstall -r requirements.txt
       # Step 3: run linter and tests
       - run:
           name: run tests
