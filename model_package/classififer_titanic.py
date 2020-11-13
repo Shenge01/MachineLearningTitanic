@@ -4,7 +4,8 @@ import joblib
 
 from ..preprocessors.titanic_module import create_status, male_female_child, family, other_titles
 
-pickle_jar_path = 'MachineLearning/pickle_jar'
+#pickle_jar_path = 'MachineLearning/pickle_jar'
+pickle_jar_path = '/pickle_jar'
 
 ohe_titanic = joblib.load(f'{pickle_jar_path}/ohe_titanic.pkl')
 classifier_model_titanic = joblib.load(f"{pickle_jar_path}/xg_boost_titanic.pkl")
