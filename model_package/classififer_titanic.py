@@ -59,6 +59,6 @@ def classifier_titanic_model(request):
 				'Status_Miss', 'Status_Other']]
 
 	# make a prediction
-	prediction = classifier_model_titanic.predict(encoded)	
+	prediction = int(classifier_model_titanic.predict(encoded))
 
-	return int(prediction)
+	return {'predictions':prediction}
