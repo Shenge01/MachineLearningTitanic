@@ -21,7 +21,7 @@ def predict():
 		result = classifier_titanic_model(request=json_data)
 		_logger.info(f'Outputs: {result}')
 
-		predictions = result.get('predictions')[0]
+		predicted_class = result.get('predictions')
 		# version = result.get('version')
 
-		return jsonify({'predictions':result})
+		return jsonify({'predictions':predicted_class})
