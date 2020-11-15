@@ -1,0 +1,14 @@
+config/__init__.py
+config/config.py
+model_api/__init__.py
+model_api/app.py
+model_api/config.py
+model_api/controller.py
+model_package/__init__.py
+model_package/classififer_titanic.py
+model_package/setup.py
+titanic_model.egg-info/PKG-INFO
+titanic_model.egg-info/SOURCES.txt
+titanic_model.egg-info/dependency_links.txt
+titanic_model.egg-info/requires.txt
+titanic_model.egg-info/top_level.txt
