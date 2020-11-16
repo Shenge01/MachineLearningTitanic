@@ -9,7 +9,7 @@ from setuptools import find_packages, setup
 
 
 # Package meta-data.
-NAME = 'titanic_model'
+NAME = 'model_package'
 DESCRIPTION = 'Making Predictions On Passenser Survival During The Sinking Of The Titanic'
 URL = 'https://github.com/Shenge01/MachineLearningTitanic'
 EMAIL = 'nkzmlbuthelezi@gmail.com'

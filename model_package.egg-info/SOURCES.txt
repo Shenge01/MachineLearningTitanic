@@ -7,8 +7,8 @@ model_api/controller.py
 model_package/__init__.py
 model_package/classififer_titanic.py
 model_package/setup.py
-titanic_model.egg-info/PKG-INFO
-titanic_model.egg-info/SOURCES.txt
-titanic_model.egg-info/dependency_links.txt
-titanic_model.egg-info/requires.txt
-titanic_model.egg-info/top_level.txt
+model_package.egg-info/PKG-INFO
+model_package.egg-info/SOURCES.txt
+model_package.egg-info/dependency_links.txt
+model_package.egg-info/requires.txt
+model_package.egg-info/top_level.txt

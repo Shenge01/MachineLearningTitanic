@@ -1,0 +1,6 @@
+# API requirements
+flask==1.1.1
+
+# Local model_package package
+# Update with my local path
+-e "~/model_package"  #setting  the ath to the root of the folder, since the repo starts there

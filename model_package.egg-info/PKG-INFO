@@ -1,5 +1,5 @@
 Metadata-Version: 2.1
-Name: titanic-model
+Name: model-package
 Version: 0.1.0
 Summary: Making Predictions On Passenser Survival During The Sinking Of The Titanic
 Home-page: https://github.com/Shenge01/MachineLearningTitanic
