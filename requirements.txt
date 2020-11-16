@@ -1,5 +1,5 @@
 
--e "~/model_package"
+-e "model_package"
 
 category-encoders==2.1.0 #Root directory requirements
 pytest 
