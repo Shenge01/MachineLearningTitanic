@@ -1,0 +1,49 @@
+{
+	"info": {
+		"_postman_id": "d39e13a9-4e40-49fa-a339-49556fbd5367",
+		"name": "titanic_model_collections",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TitanicRequest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"Pclass\": 1,\n \"Name\": \"Cumings, Mrs. John Bradley (Florence Briggs Thayer)\",\n \"Sex\": \"female\",\n \"Age\": 38.0,\n \"SibSp\": 1,\n \"Parch\": 0,\n \"Ticket\": \"PC 17599\",\n \"Fare\": 71.2833,\n \"Cabin\": \"C85\",\n \"Embarked\": \"C\"\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/xgboostclassifier",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"xgboostclassifier"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "APIHealthStatus",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}

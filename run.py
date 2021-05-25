@@ -1,8 +1,19 @@
-# fentry point to start our flask application
+# Entry point to start our flask application
 
-from .model_api.app import create_app
+from flask import Flask, request
 
-application = create_app()
+from model_package.classififer_titanic import classifier_titanic_model
 
-if __name__ == '__main__':
-	application.run()
+app = Flask(__name__)
+
+@app.route("/")
+def test():
+	return "It Works!!"
+
+@app.route("/xgboostclassifier", methods=['POST'])
+def titanic_functions():
+	api_request = request.get_json()
+
+	result = classifier_titanic_model(api_request)
+
+	return result

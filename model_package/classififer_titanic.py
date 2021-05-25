@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np 
 import joblib
 
-from ..preprocessors.titanic_module import create_status, male_female_child, family, other_titles
+from preprocessors.titanic_module import create_status, male_female_child, family, other_titles
 
 #pickle_jar_path = 'MachineLearning/pickle_jar'
 pickle_jar_path = 'pickle_jar'
@@ -18,7 +18,7 @@ def classifier_titanic_model(request):
 	Age = int(request['Age'])
 	SibSp = int(request['SibSp'])
 	Parch = int(request['Parch'])
-	Ticket = int(request['Ticket'])
+	Ticket = str(request['Ticket'])
 	Fare = int(request['Fare'])
 	Cabin = str(request['Cabin'])
 	Embarked = str(request['Embarked'])
