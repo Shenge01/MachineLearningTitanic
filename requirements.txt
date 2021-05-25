@@ -1,4 +1,4 @@
-category-encoders==2.1.0 #Root directory requirements
+category-encoders==2.1.0 
 pytest 
 flask 
 xgboost==0.90
