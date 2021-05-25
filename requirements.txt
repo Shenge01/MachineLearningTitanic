@@ -1,0 +1,4 @@
+category-encoders==2.1.0 #Root directory requirements
+pytest 
+flask 
+xgboost==0.90
