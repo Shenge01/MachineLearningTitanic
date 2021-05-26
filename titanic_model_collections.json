@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "TitanicRequest",
+			"name": "TitanicRequest Dev",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -20,15 +20,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/xgboostclassifier",
-					"protocol": "http",
+					"raw": "https://titanic-model-api.herokuapp.com/xgboostclassifier",
+					"protocol": "https",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"titanic-model-api",
+						"herokuapp",
+						"com"
 					],
-					"port": "5000",
 					"path": [
 						"xgboostclassifier"
 					]
@@ -37,13 +35,79 @@
 			"response": []
 		},
 		{
-			"name": "APIHealthStatus",
+			"name": "TitanicRequest Local",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"Pclass\": 1,\n \"Name\": \"Cumings, Mrs. John Bradley (Florence Briggs Thayer)\",\n \"Sex\": \"female\",\n \"Age\": 38.0,\n \"SibSp\": 1,\n \"Parch\": 0,\n \"Ticket\": \"PC 17599\",\n \"Fare\": 71.2833,\n \"Cabin\": \"C85\",\n \"Embarked\": \"C\"\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{LocalAPIUrl}}/xgboostclassifier",
+					"host": [
+						"{{LocalAPIUrl}}"
+					],
+					"path": [
+						"xgboostclassifier"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "APIHealthStatus Dev",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": null
 			},
 			"response": []
+		},
+		{
+			"name": "APIHealthStatus Local",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LocalAPIUrl}}",
+					"host": [
+						"{{LocalAPIUrl}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "LocalAPIUrl",
+			"value": "http://127.0.0.1:5000"
 		}
 	]
 }
