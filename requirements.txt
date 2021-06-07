@@ -1,7 +1,7 @@
 category-encoders==2.1.0 
 pytest 
 flask 
-xgboost==0.90
+xgboost
 gunicorn
 Werkzeug
 Jinja2
