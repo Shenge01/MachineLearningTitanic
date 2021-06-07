@@ -2,3 +2,5 @@ logs
 __pycache__
 .ipynb
 .DS_Store
+.deployment
+.vscode/
