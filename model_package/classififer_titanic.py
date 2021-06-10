@@ -8,7 +8,7 @@ from preprocessors.titanic_module import create_status, male_female_child, famil
 pickle_jar_path = 'pickle_jar'
 
 ohe_titanic = joblib.load(f'{pickle_jar_path}/ohe_titanic.pkl')
-classifier_model_titanic = joblib.load(f"{pickle_jar_path}/xg_boost_titanic.pkl")
+classifier_model_titanic = joblib.load(f"{pickle_jar_path}/logistic_model_titanic.pkl")
 
 def classifier_titanic_model(request):
 	# Cast values from the incoming request
