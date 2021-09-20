@@ -1,0 +1,8 @@
+Procfile
+startup.txt
+.deployment
+.pytest_cache
+.vscode
+.ipynb_checkpoints
+.circle
+.github
