@@ -7,6 +7,7 @@ jobs:
 
     working_directory: ~/repo
 
+  build_and_test_ml_api:
     steps:
       # Step 1: obtain repo from GitHub
       - checkout
@@ -20,3 +21,14 @@ jobs:
           name: run tests
           command: |
             python3 -m pytest tests/test_titanic_classifier.py  -W ignore::DeprecationWarning
+
+  deploy_ml_api_and_package_heroku:
+    steps:
+      # checkout to root directory
+      - checkout
+      # push repo to Heroku, Heroku would, look for the Procfile for running the application
+      - run:
+        name: Deploying model repo to Heroku
+        command: |
+          git push heroku master
+    
