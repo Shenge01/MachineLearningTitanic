@@ -28,7 +28,7 @@ jobs:
       - checkout
       # push repo to Heroku, Heroku would, look for the Procfile for running the application
       - run:
-        name: Deploying model repo to Heroku
-        command: |
-          git push heroku master
+          name: Deploying model repo to Heroku
+          command: |
+            git push heroku master
     
