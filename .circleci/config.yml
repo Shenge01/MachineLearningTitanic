@@ -1,34 +1,34 @@
 # Python CircleCI 2.0 configuration file
 version: 2
-jobs:
-  build:
-    docker:
-      - image: circleci/python:3.8.6
 
-    working_directory: ~/repo
+build:
+  docker:
+    - image: circleci/python:3.8.6
 
-  build_and_test_ml_api:
-    steps:
-      # Step 1: obtain repo from GitHub
-      - checkout
-      # Step 2: create virtual env and install dependencies
-      - run:
-          name: install dependencies
-          command: |
-            pip3 install  -r requirements.txt 
-      # Step 3: run linter and tests
-      - run:
-          name: run tests
-          command: |
-            python3 -m pytest tests/test_titanic_classifier.py  -W ignore::DeprecationWarning
+  working_directory: ~/repo
 
-  deploy_ml_api_and_package_heroku:
-    steps:
-      # checkout to root directory
-      - checkout
-      # push repo to Heroku, Heroku would, look for the Procfile for running the application
-      - run:
-          name: Deploying model repo to Heroku
-          command: |
-            git push heroku master
-    
+build_and_test_ml_api:
+  steps:
+    # Step 1: obtain repo from GitHub
+    - checkout
+    # Step 2: create virtual env and install dependencies
+    - run:
+        name: install dependencies
+        command: |
+          pip3 install  -r requirements.txt 
+    # Step 3: run linter and tests
+    - run:
+        name: run tests
+        command: |
+          python3 -m pytest tests/test_titanic_classifier.py  -W ignore::DeprecationWarning
+
+deploy_ml_api_and_package_heroku:
+  steps:
+    # checkout to root directory
+    - checkout
+    # push repo to Heroku, Heroku would, look for the Procfile for running the application
+    - run:
+        name: Deploying model repo to Heroku
+        command: |
+          git push heroku master
+  
